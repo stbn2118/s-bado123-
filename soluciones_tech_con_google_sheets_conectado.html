@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones Tech | Soporte Técnico de PC & Servicios IT</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        techDark: '#080d19',
+                        techCard: '#0f172a',
+                        techCyan: '#00f0ff',
+                        techBlue: '#0072ff',
+                        techAccent: '#0ea5e9'
+                    },
+                    boxShadow: {
+                        glow: '0 0 20px rgba(0, 240, 255, 0.35)',
+                        glowSm: '0 0 10px rgba(0, 240, 255, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #080d19;
+            color: #f8fafc;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #00f0ff 50%, #0072ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-techDark font-sans antialiased selection:bg-techCyan selection:text-techDark min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full bg-techDark/90 backdrop-blur-md z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="Gemini_Generated_Image_9fnt0m9fnt0m9fnt.jpg" alt="Soluciones Tech Logo" class="h-12 w-12 rounded-xl object-cover border border-techCyan/40 group-hover:shadow-glow transition-all duration-300">
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-wider text-white">SOLUCIONES<span class="text-techCyan">TECH</span></span>
+                    <span class="text-[10px] tracking-widest text-slate-400 uppercase font-semibold">Soporte Técnico de PC</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#inicio" class="hover:text-techCyan transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-techCyan transition-colors">Servicios</a>
+                <a href="#cotizador" class="hover:text-techCyan transition-colors">Calculadora Express</a>
+                <a href="#nosotros" class="hover:text-techCyan transition-colors">Nosotros</a>
+                <a href="#contacto" class="hover:text-techCyan transition-colors">Contacto</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://wa.me/573000000000?text=Hola,%20necesito%20soporte%20t%C3%A9cnico%20para%20mi%20PC" target="_blank" class="flex items-center gap-2 bg-gradient-to-r from-techCyan to-techBlue hover:brightness-110 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Soporte Urgente</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-techCard border-b border-slate-800 px-6 py-4 flex flex-col gap-4 text-slate-300">
+            <a href="#inicio" class="mobile-link hover:text-techCyan">Inicio</a>
+            <a href="#servicios" class="mobile-link hover:text-techCyan">Servicios</a>
+            <a href="#cotizador" class="mobile-link hover:text-techCyan">Calculadora Express</a>
+            <a href="#nosotros" class="mobile-link hover:text-techCyan">Nosotros</a>
+            <a href="#contacto" class="mobile-link hover:text-techCyan">Contacto</a>
+            <a href="https://wa.me/573000000000?text=Hola,%20necesito%20soporte%20t%C3%A9cnico%20para%20mi%20PC" target="_blank" class="flex items-center justify-center gap-2 bg-techCyan text-slate-950 font-bold py-2.5 rounded-xl shadow-glow">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Soporte Urgente</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-grid-pattern overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-techDark/70 to-techDark pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-techCyan/10 border border-techCyan/30 text-techCyan text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-techCyan animate-pulse"></span>
+                        Servicio Especializado Remoto y Presencial
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Rendimiento Máximo y <span class="gradient-text">Protección Total</span> para tu Equipo
+                    </h1>
+                    <p class="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Diagnóstico avanzado de hardware, optimización de sistemas operativos y soporte de redes empresariales o particulares. Soluciones rápidas y garantizadas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#cotizador" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-techCyan to-techBlue text-slate-950 font-bold hover:shadow-glow transition-all duration-300 text-center">
+                            Cotizar Servicio Ahora
+                        </a>
+                        <a href="#servicios" class="px-7 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-techCyan/50 text-slate-200 font-semibold transition-all duration-300 text-center">
+                            Ver Servicios
+                        </a>
+                    </div>
+                    <!-- Trust Badges -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/80 text-slate-400 text-xs sm:text-sm">
+                        <div class="flex items-center justify-center lg:justify-start gap-2">
+                            <i class="fa-solid fa-shield-halved text-techCyan"></i>
+                            <span>Garantía de Reparación</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-2">
+                            <i class="fa-solid fa-bolt text-techCyan"></i>
+                            <span>Atención Rápida</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-2">
+                            <i class="fa-solid fa-user-check text-techCyan"></i>
+                            <span>Técnicos Certificados</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Hero Box -->
+                <div class="relative flex justify-center items-center">
+                    <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-techCyan/20 rounded-full filter blur-3xl -z-10 animate-pulse"></div>
+                    
+                    <div class="relative bg-techCard/80 backdrop-blur-xl border border-slate-700/60 p-6 sm:p-8 rounded-3xl shadow-2xl max-w-md w-full">
+                        <div class="flex items-center gap-4 border-b border-slate-800 pb-4 mb-6">
+                            <img src="Gemini_Generated_Image_9fnt0m9fnt0m9fnt.jpg" alt="Logo Soluciones Tech" class="w-16 h-16 rounded-2xl border border-techCyan/50 shadow-glow">
+                            <div>
+                                <h3 class="text-white font-bold text-lg">Soluciones Tech</h3>
+                                <p class="text-techCyan text-xs font-mono">ESTADO: EN LÍNEA / DISPONIBLE</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="p-2.5 rounded-lg bg-techBlue/20 text-techCyan">
+                                        <i class="fa-solid fa-microchip"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400">Diagnóstico de Hardware</p>
+                                        <p class="text-sm font-semibold text-white">Análisis de Fallas CPU/GPU/RAM</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full font-mono">OK</span>
+                            </div>
+
+                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="p-2.5 rounded-lg bg-techBlue/20 text-techCyan">
+                                        <i class="fa-solid fa-gauge-high"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400">Optimización de S.O.</p>
+                                        <p class="text-sm font-semibold text-white">Limpieza & Aceleración</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs bg-techCyan/20 text-techCyan px-2.5 py-1 rounded-full font-mono">100%</span>
+                            </div>
+
+                            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="p-2.5 rounded-lg bg-techBlue/20 text-techCyan">
+                                        <i class="fa-solid fa-network-wired"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400">Auditoría de Redes</p>
+                                        <p class="text-sm font-semibold text-white">Seguridad WiFi & Router</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full font-mono">SEGURO</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-800 text-center">
+                            <span class="text-xs text-slate-400">Atención personalizada inmediata vía remota o a domicilio.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicios" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-techCyan font-semibold mb-2">Especialidades Técnicas</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Nuestros Servicios Profesionales</h3>
+                <p class="text-slate-400 mt-3">Soluciones integrales diseñadas para extender la vida útil de tus equipos informáticos y maximizar el rendimiento.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-techCard p-6 rounded-2xl border border-slate-800 hover:border-techCyan/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-techDark rounded-xl flex items-center justify-center border border-slate-700 text-techCyan text-2xl mb-6 group-hover:border-techCyan group-hover:shadow-glowSm transition-all">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Diagnóstico de Hardware</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Revisión detallada de procesadores, placas madre, tarjetas de video, fuentes de poder y discos duros para detectar fallas electrónicas o térmicas.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-techCyan"></i> Detección de sobrecalentamiento</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-techCyan"></i> Test de componentes y RAM</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-techCard p-6 rounded-2xl border border-slate-800 hover:border-techCyan/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-techDark rounded-xl flex items-center justify-center border border-slate-700 text-techCyan text-2xl mb-6 group-hover:border-techCyan group-hover:shadow-glowSm transition-all">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Optimización S.O.</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Formateo limpio, instalación de Windows/Linux, eliminación de malware/virus, actualización de controladores y aceleración de arranque.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-techCyan"></i> Eliminación de spyware/virus</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-techCyan"></i> Ajuste de registro y rendimiento</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-techCard p-6 rounded-2xl border border-slate-800 hover:border-techCyan/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-techDark rounded-xl flex items-center justify-center border border-slate-700 text-techCyan text-2xl mb-6 group-hover:border-techCyan group-hover:shadow-glowSm transition-all">
+                        <i class="fa-solid fa-fan"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Mantenimiento Preventivo</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Limpieza profunda interna de polvo, cambio de pasta térmica de alto rendimiento y ordenamiento de cableado para flujo de aire óptimo.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-techCyan"></i> Pasta térmica artic/noctua</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-techCyan"></i> Limpieza ultrasónica de ventiladores</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-techCard p-6 rounded-2xl border border-slate-800 hover:border-techCyan/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-techDark rounded-xl flex items-center justify-center border border-slate-700 text-techCyan text-2xl mb-6 group-hover:border-techCyan group-hover:shadow-glowSm transition-all">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Redes & Auditoría</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Configuración de routers, cableado estructurado, extensores WiFi mesh, seguridad de red y optimización de latencia para negocios y hogares.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-techCyan"></i> Configuración de VPN & Routers</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-techCyan"></i> Mejora de cobertura WiFi</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE PRICING CALCULATOR -->
+    <section id="cotizador" class="py-20 bg-techDark relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-techCard border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-techBlue/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs font-mono uppercase text-techCyan bg-techCyan/10 px-3 py-1 rounded-full border border-techCyan/30">Cotizador Interactivo</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-3">Calcula el Presupuesto Estimado</h3>
+                    <p class="text-slate-400 text-sm mt-2">Selecciona los servicios que requiere tu equipo para obtener un estimado instantáneo.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <!-- Options Selection -->
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-2">1. Selecciona Servicios:</h4>
+                        
+                        <label class="flex items-center justify-between p-4 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-techCyan/50 transition-all">
+                            <div class="flex items-center gap-3">
+                                <input type="checkbox" class="calc-option accent-techCyan w-5 h-5 rounded" data-price="25" checked>
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Diagnóstico Completo de Hardware</p>
+                                    <p class="text-xs text-slate-400">Inspección interna y test de rendimiento</p>
+                                </div>
+                            </div>
+                            <span class="text-techCyan font-bold text-sm">$25 USD</span>
+                        </label>
+
+                        <label class="flex items-center justify-between p-4 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-techCyan/50 transition-all">
+                            <div class="flex items-center gap-3">
+                                <input type="checkbox" class="calc-option accent-techCyan w-5 h-5 rounded" data-price="35">
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Mantenimiento Físico & Pasta Térmica</p>
+                                    <p class="text-xs text-slate-400">Limpieza de polvo y reemplazo térmico</p>
+                                </div>
+                            </div>
+                            <span class="text-techCyan font-bold text-sm">$35 USD</span>
+                        </label>
+
+                        <label class="flex items-center justify-between p-4 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-techCyan/50 transition-all">
+                            <div class="flex items-center gap-3">
+                                <input type="checkbox" class="calc-option accent-techCyan w-5 h-5 rounded" data-price="40">
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Formateo e Instalación de Sistema</p>
+                                    <p class="text-xs text-slate-400">Windows/Linux + Drivers + Paquete Básico</p>
+                                </div>
+                            </div>
+                            <span class="text-techCyan font-bold text-sm">$40 USD</span>
+                        </label>
+
+                        <label class="flex items-center justify-between p-4 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-techCyan/50 transition-all">
+                            <div class="flex items-center gap-3">
+                                <input type="checkbox" class="calc-option accent-techCyan w-5 h-5 rounded" data-price="30">
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Optimización de Redes & WiFi</p>
+                                    <p class="text-xs text-slate-400">Configuración de router y seguridad</p>
+                                </div>
+                            </div>
+                            <span class="text-techCyan font-bold text-sm">$30 USD</span>
+                        </label>
+                        
+                        <!-- Modalidad -->
+                        <div class="pt-2">
+                            <h4 class="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-2">2. Modalidad de Atención:</h4>
+                            <select id="modalidadSelect" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm text-slate-200 focus:outline-none focus:border-techCyan">
+                                <option value="0">En Laboratorio / Remoto ($0 extra)</option>
+                                <option value="15">Soporte a Domicilio / Oficina (+$15 USD)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Price Summary Box -->
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between h-full">
+                        <div>
+                            <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Resumen del Presupuesto</h4>
+                            
+                            <div class="space-y-3 text-sm border-b border-slate-800 pb-4">
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Servicios Seleccionados:</span>
+                                    <span id="subtotalText" class="font-semibold text-white">$25 USD</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Cargo de Modalidad:</span>
+                                    <span id="modalidadText" class="font-semibold text-white">$0 USD</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Descuento Aplicado:</span>
+                                    <span class="text-emerald-400 font-semibold">- $0 USD</span>
+                                </div>
+                            </div>
+
+                            <div class="py-6 text-center">
+                                <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold block">Total Estimado</span>
+                                <span id="totalPrice" class="text-5xl font-extrabold text-techCyan tracking-tight">$25</span>
+                                <span class="text-slate-400 text-sm"> USD</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <button id="sendQuoteBtn" class="w-full bg-gradient-to-r from-techCyan to-techBlue text-slate-950 font-bold py-3.5 rounded-xl shadow-glow hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Solicitar con esta Cotización</span>
+                            </button>
+                            <p class="text-[11px] text-center text-slate-500">Los precios son estimativos y pueden variar tras la revisión física.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="nosotros" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="Gemini_Generated_Image_9fnt0m9fnt0m9fnt.jpg" alt="Soluciones Tech Logo Empresa" class="w-full max-w-md mx-auto rounded-3xl border border-techCyan/40 shadow-glow">
+                </div>
+                <div class="space-y-6">
+                    <span class="text-xs font-semibold text-techCyan uppercase tracking-widest">¿Por qué elegirnos?</span>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Compromiso, Calidad y Transparencia en Cada Servicio</h3>
+                    <p class="text-slate-400 text-base leading-relaxed">
+                        En **Soluciones Tech** nos especializamos en brindar soporte técnico de alta precisión para computadores de escritorio, laptops y redes locales. Con años de experiencia en el sector, nuestro objetivo es mantener tus herramientas de trabajo y entretenimiento en las mejores condiciones.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-2">
+                        <div class="bg-techDark p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-2xl font-bold text-techCyan">+1,200</h5>
+                            <p class="text-xs text-slate-400 mt-1">Equipos Optimizados</p>
+                        </div>
+                        <div class="bg-techDark p-4 rounded-xl border border-slate-800">
+                            <h5 class="text-2xl font-bold text-techCyan">99%</h5>
+                            <p class="text-xs text-slate-400 mt-1">Clientes Satisfechos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contacto" class="py-20 bg-techDark border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs uppercase tracking-widest text-techCyan font-semibold mb-2">Contacto Directo</h2>
+                <h3 class="text-3xl font-extrabold text-white">¿Tienes problemas con tu PC?</h3>
+                <p class="text-slate-400 mt-2">Déjanos un mensaje o contáctanos de inmediato para agendar un diagnóstico.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Contact Info Cards -->
+                <div class="space-y-4">
+                    <div class="bg-techCard p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-techCyan/10 border border-techCyan/30 rounded-xl flex items-center justify-center text-techCyan text-xl">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Teléfono / WhatsApp</p>
+                            <p class="text-sm font-semibold text-white">+57 300 000 0000</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-techCard p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-techCyan/10 border border-techCyan/30 rounded-xl flex items-center justify-center text-techCyan text-xl">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Correo Electrónico</p>
+                            <p class="text-sm font-semibold text-white">contacto@solucionestech.com</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-techCard p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-techCyan/10 border border-techCyan/30 rounded-xl flex items-center justify-center text-techCyan text-xl">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Horario de Atención</p>
+                            <p class="text-sm font-semibold text-white">Lun - Sáb: 8:00 AM - 7:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-2 bg-techCard p-8 rounded-2xl border border-slate-800">
+                    <form id="contactForm" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Nombre Completo</label>
+                                <input id="nombreCompleto" name="nombreCompleto" type="text" required maxlength="120" autocomplete="name" placeholder="Tu nombre" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-techCyan">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Correo Electrónico</label>
+                                <input id="correoElectronico" name="correoElectronico" type="email" required maxlength="160" autocomplete="email" placeholder="tuemail@ejemplo.com" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-techCyan">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Tipo de Falla o Requerimiento</label>
+                            <select id="tipoFalla" name="tipoFalla" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-techCyan">
+                                <option>PC no enciende / Pantalla negra</option>
+                                <option>Equipo muy lento / Virus</option>
+                                <option>Limpieza y mantenimiento físico</option>
+                                <option>Problemas de WiFi o Red</option>
+                                <option>Otro servicio</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Detalles del Problema</label>
+                            <textarea id="descripcionProblema" name="descripcionProblema" rows="4" required maxlength="3000" placeholder="Describe brevemente lo que sucede con tu equipo..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-techCyan"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-techCyan to-techBlue text-slate-950 font-bold py-3.5 rounded-xl shadow-glow hover:brightness-110 transition-all">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+
+                    <!-- Success Alert Box -->
+                    <div id="successBox" role="status" aria-live="polite" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm text-center">
+                        <i class="fa-solid fa-circle-check mr-2"></i> Solicitud enviada. Te responderemos en breve.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/573000000000?text=Hola,%20quisiera%20consultar%20sobre%20el%20soporte%20t%C3%A9cnico%20de%20PC" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-slate-700 shadow-md">
+            ¡Chatea con un Técnico!
+        </span>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-10 text-slate-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <img src="Gemini_Generated_Image_9fnt0m9fnt0m9fnt.jpg" alt="Logo" class="w-8 h-8 rounded-lg">
+                <span class="text-slate-300 font-semibold">Soluciones Tech &copy; 2026</span>
+            </div>
+            <p>Soporte Técnico Especializado de PC | Todos los derechos reservados.</p>
+            <div class="flex gap-4 text-slate-400">
+                <a href="#" class="hover:text-techCyan"><i class="fa-brands fa-facebook text-base"></i></a>
+                <a href="#" class="hover:text-techCyan"><i class="fa-brands fa-instagram text-base"></i></a>
+                <a href="#" class="hover:text-techCyan"><i class="fa-brands fa-linkedin text-base"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR CALCULATOR AND INTERACTION -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Pricing Calculator
+        const calcOptions = document.querySelectorAll('.calc-option');
+        const modalidadSelect = document.getElementById('modalidadSelect');
+        const subtotalText = document.getElementById('subtotalText');
+        const modalidadText = document.getElementById('modalidadText');
+        const totalPrice = document.getElementById('totalPrice');
+        const sendQuoteBtn = document.getElementById('sendQuoteBtn');
+
+        function updatePrice() {
+            let subtotal = 0;
+            calcOptions.forEach(opt => {
+                if (opt.checked) {
+                    subtotal += parseFloat(opt.dataset.price);
+                }
+            });
+
+            const modalidadCost = parseFloat(modalidadSelect.value);
+            const total = subtotal + modalidadCost;
+
+            subtotalText.textContent = `$${subtotal} USD`;
+            modalidadText.textContent = `$${modalidadCost} USD`;
+            totalPrice.textContent = `$${total}`;
+        }
+
+        calcOptions.forEach(opt => opt.addEventListener('change', updatePrice));
+        modalidadSelect.addEventListener('change', updatePrice);
+
+        // Send Quote via WhatsApp
+        sendQuoteBtn.addEventListener('click', () => {
+            let selectedServices = [];
+            calcOptions.forEach(opt => {
+                if (opt.checked) {
+                    selectedServices.push(opt.nextElementSibling.querySelector('p').textContent);
+                }
+            });
+
+            const modality = modalidadSelect.options[modalidadSelect.selectedIndex].text;
+            const total = totalPrice.textContent;
+
+            const message = `Hola Soluciones Tech, me interesa cotizar:\n- Servicios: ${selectedServices.join(', ')}\n- Modalidad: ${modality}\n- Total estimado: ${total} USD`;
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/573000000000?text=${encoded}`, '_blank');
+        });
+
+        // Contact Form Handling - Google Sheets mediante Google Apps Script
+        // IMPORTANTE: reemplaza el texto de abajo por la URL desplegada de tu Apps Script
+        // La URL debe terminar en /exec.
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyuib0O3tJnEfVKnOnF_Vc3iJiefiYVpyhTxw_uUiC_0y4GJepBcYNKWOb_Yz5QtoX-/exec';
+
+        const contactForm = document.getElementById('contactForm');
+        const successBox = document.getElementById('successBox');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!contactForm.reportValidity()) return;
+
+            if (!GOOGLE_SCRIPT_URL.startsWith('https://script.google.com/macros/s/') ||
+                !GOOGLE_SCRIPT_URL.endsWith('/exec')) {
+                alert('Falta configurar la URL de Google Apps Script en el archivo HTML.');
+                return;
+            }
+
+            const datos = {
+                nombreCompleto: document.getElementById('nombreCompleto').value.trim(),
+                correoElectronico: document.getElementById('correoElectronico').value.trim(),
+                tipoFalla: document.getElementById('tipoFalla').value,
+                descripcionProblema: document.getElementById('descripcionProblema').value.trim()
+            };
+
+            if (!datos.nombreCompleto || !datos.correoElectronico ||
+                !datos.tipoFalla || !datos.descripcionProblema) {
+                alert('Por favor completa todos los campos.');
+                return;
+            }
+
+            const textoOriginal = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+            successBox.classList.add('hidden');
+
+            try {
+                // text/plain evita la solicitud CORS de preflight en el navegador.
+                // Con no-cors el navegador no permite leer la respuesta del servidor;
+                // el mensaje confirma el envío de la petición, no una verificación de la fila.
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(datos)
+                });
+
+                successBox.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> Solicitud enviada. Gracias por contactarnos.';
+                successBox.classList.remove('hidden');
+                contactForm.reset();
+            } catch (error) {
+                console.error('Error al enviar el formulario:', error);
+                alert('No se pudo enviar la solicitud. Revisa tu conexión e inténtalo de nuevo.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = textoOriginal;
+            }
+        });
+
+        // Initialize Price Calculation
+        updatePrice();
+    </script>
+</body>
+</html>
